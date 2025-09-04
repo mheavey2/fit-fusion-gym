@@ -1,0 +1,74 @@
+.heroOuter {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-image: url("/gym.svg");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--secondary-dark-color);
+  width: 100%;
+  letter-spacing: 0.2em;
+  padding: 0 2rem;
+  margin-top: 3em;
+  text-align: left;
+  max-width: 800px;
+  text-shadow: 2px 2px 3px var(--secondary-text);
+}
+
+.heroContent h1 {
+  font-weight: 700;
+  font-size: 4em;
+  text-wrap: wrap;
+  text-align: center;
+}
+
+.heroContent h2 {
+  font-weight: 500;
+  font-size: 2em;
+  margin-top: 2.5em;
+}
+.heroContent h3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.heroContent span {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.introButton {
+  background-color: var(--primary-dark-color);
+  color: var(--secondary-accent);
+  border-radius: 20px;
+  width: 12em;
+  line-height: 1em;
+  padding: 0.7em 0em;
+  margin-top: 5em;
+  font-size: 1.3em;
+  font-weight: 700;
+  box-shadow: 3px 3px 6px var(--secondary-text);
+  letter-spacing: 0.1em;
+  font-family: inherit;
+  transition: transform 0.2s;
+}
+
+.introButton:hover {
+  transform: scale(1.1);
+}
