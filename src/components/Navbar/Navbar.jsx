@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
-import { NavbarMenu } from "../NavbarMenu/NavbarMenu";
+import NavbarMenu from "../NavbarMenu/NavbarMenu";
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       <h1>Hello</h1>
@@ -9,3 +9,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;

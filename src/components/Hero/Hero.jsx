@@ -1,6 +1,6 @@
 import styles from "./Hero.module.css";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <div className={styles.heroOuter}>
       <div className={styles.heroContent}>
@@ -13,8 +13,10 @@ export const Hero = () => {
           <span>|</span>
           <span>Endurance</span>
         </h3>
-        <button className={styles.introButton}>Try Our Intro Offer</button>
+        <button id={styles.introButton}>Try Our Intro Offer</button>
       </div>
     </div>
   );
 };
+
+export default Hero;

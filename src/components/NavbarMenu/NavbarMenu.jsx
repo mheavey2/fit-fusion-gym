@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "./NavbarMenu.module.css";
 
-export const NavbarMenu = () => {
+const NavbarMenu = () => {
   return (
     <div className={styles.navbarMenuOuter}>
       <NavLink to="/">Home</NavLink>
@@ -13,3 +13,4 @@ export const NavbarMenu = () => {
     </div>
   );
 };
+export default NavbarMenu;

@@ -31,14 +31,14 @@
 
 .heroContent h1 {
   font-weight: 700;
-  font-size: 4em;
+  font-size: var(--font-large);
   text-wrap: wrap;
   text-align: center;
 }
 
 .heroContent h2 {
   font-weight: 500;
-  font-size: 2em;
+  font-size: var(--font-medium);
   margin-top: 2.5em;
 }
 .heroContent h3 {
@@ -48,27 +48,13 @@
   margin-top: 1.2rem;
 }
 .heroContent span {
-  font-size: 1.2em;
+  font-size: var(--font-small);
   font-weight: 700;
   text-align: center;
 }
 
-.introButton {
+#introButton {
   background-color: var(--primary-dark-color);
   color: var(--secondary-accent);
-  border-radius: 20px;
-  width: 12em;
-  line-height: 1em;
-  padding: 0.7em 0em;
   margin-top: 5em;
-  font-size: 1.3em;
-  font-weight: 700;
-  box-shadow: 3px 3px 6px var(--secondary-text);
-  letter-spacing: 0.1em;
-  font-family: inherit;
-  transition: transform 0.2s;
-}
-
-.introButton:hover {
-  transform: scale(1.1);
 }
