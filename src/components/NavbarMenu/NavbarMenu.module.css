@@ -1,0 +1,12 @@
+.navbarMenuOuter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* TODO: update color */
+  background-color: var(--primary-color);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  visibility: hidden;
+}
