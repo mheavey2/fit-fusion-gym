@@ -18,7 +18,6 @@ const About = () => {
         and <span>resilience</span> in the world and move through life with
         <span> confidence</span>.
       </p>
-      {/* <button id={styles.aboutButton}>Choose Your Membership</button> */}
     </div>
   );
 };
