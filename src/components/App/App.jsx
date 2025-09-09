@@ -1,14 +1,14 @@
 import Navbar from "../Navbar/Navbar";
-import Hero from "../Hero/Hero";
 import styles from "./App.module.css";
-import About from "../About/About";
+import { Outlet } from "react-router-dom";
+import Contact from "../Contact/Contact";
 
 function App() {
   return (
     <div className={styles.appContainer}>
       <Navbar />
-      <Hero />
-      <About />
+      <Outlet />
+      <Contact />
     </div>
   );
 }

@@ -19,11 +19,17 @@
   --font-medium: 2em;
   --font-med-small: 1.5em;
   --font-small: 1.2em;
+  --font-extra-small: 0.7em;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: var(--media-break-small);
   min-height: 100vh;
   background-color: var(--primary-dark-color);
   font-family: "Radley", serif;
