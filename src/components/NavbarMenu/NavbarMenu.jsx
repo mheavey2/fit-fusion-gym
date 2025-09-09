@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import styles from "./NavbarMenu.module.css";
 
@@ -21,8 +21,8 @@ const NavbarMenu = () => {
       >
         <div className={styles.navbarMenuLinks}>
           <NavLink to="/">Home</NavLink>
-          <Link to="about">About Us</Link>
-          <NavLink to="about/team">The Team</NavLink>
+          <NavLink to="about">About Us</NavLink>
+          <NavLink to="team">The Team</NavLink>
           <NavLink to="classes">Classes</NavLink>
           <NavLink to="membership">Membership</NavLink>
           <NavLink to="contact">Contact Us</NavLink>
