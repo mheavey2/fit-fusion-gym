@@ -1,5 +1,11 @@
 .navbarContainer {
-  background-color: orange;
+  background-color: var(--primary-dark-color);
+  color: var(--secondary-accent);
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5em;
   width: 100%;
+  opacity: 1;
+  padding: 2em;
 }

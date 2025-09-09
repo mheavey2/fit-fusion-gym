@@ -1,5 +1,9 @@
 .navbarMenuOuter {
   display: flex;
+  justify-content: space-between;
+}
+.navbarMenu {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
@@ -7,13 +11,30 @@
   padding: 20px;
   margin: 2px;
   border-radius: 10px;
-  /* visibility: hidden; */
   opacity: 0.9;
   line-height: 2.6;
   z-index: 1;
   position: absolute;
-  right: 0.1em;
+  top: 4em;
+  right: -0.1em;
 }
+
+.hidden {
+  display: none;
+}
+#navMenuBtn {
+  border-radius: 20px;
+  width: 2em;
+  background-color: var(--primary-dark-color);
+  padding: 0.2em 0em;
+  box-shadow: none;
+  border: none;
+  /* transition: transform 0.2s; */
+}
+/* #navMenuBtn > img:hover {
+  transform: scale(1.3);
+  opacity: 1;
+} */
 
 .navbarMenuLinks {
   display: flex;
@@ -23,23 +44,4 @@
   background-color: var(--primary-dark-color);
   padding: 1px;
   position: relative;
-}
-
-.navbarExitContainer {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  position: relative;
-  margin: 0px;
-  margin-bottom: 1.5em;
-}
-.navbarExitContainer > img {
-  height: 20px;
-  position: absolute;
-  z-index: 2;
-  transition: transform 0.2s;
-}
-.navbarExitContainer > img:hover {
-  transform: scale(1.3);
-  opacity: 1;
 }

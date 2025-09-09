@@ -4,7 +4,8 @@ import NavbarMenu from "../NavbarMenu/NavbarMenu";
 const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
-      <h1>Hello</h1>
+      <h2>FitFusion Studios</h2>
+
       <NavbarMenu />
     </div>
   );
