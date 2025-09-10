@@ -1,4 +1,54 @@
 .teamContainer {
-  background-color: orange;
-  height: 40em;
+  display: grid;
+  gap: 2em 0em;
+  max-width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 6em 0em;
+  background-color: var(--primary-dark-color);
+  border-radius: 10px;
+}
+.teamMember {
+  background-color: var(--secondary-dark-color);
+  border-radius: 10px;
+  padding: 1em;
+  color: var(--primary-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+.teamMember:hover {
+  filter: grayscale(0%);
+}
+
+.teamImg {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+#teamOne > img {
+  object-position: right;
+}
+#teamFive > img {
+  object-position: bottom;
+}
+#teamSix > img {
+  object-position: right;
+}
+
+@media (min-width: 768px) {
+  .teamContainer {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3em;
+  }
+  .teamImg {
+    height: 12em;
+    width: 12em;
+    object-fit: cover;
+  }
 }
