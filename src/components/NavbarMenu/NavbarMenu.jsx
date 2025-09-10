@@ -25,7 +25,6 @@ const NavbarMenu = () => {
           <NavLink to="team">The Team</NavLink>
           <NavLink to="classes">Classes</NavLink>
           <NavLink to="membership">Membership</NavLink>
-          <NavLink to="contact">Contact Us</NavLink>
         </div>
       </div>
     </div>

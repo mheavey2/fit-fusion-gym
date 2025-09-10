@@ -8,7 +8,7 @@ function App() {
     <div className={styles.appContainer}>
       <Navbar />
       <Outlet />
-      <Contact />
+      <Contact id="contact" />
     </div>
   );
 }

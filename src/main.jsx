@@ -13,7 +13,6 @@ import About from "./components/About/About.jsx";
 import Team from "./components/Team/Team.jsx";
 import Classes from "./components/Classes/Classes.jsx";
 import Membership from "./components/Membership/Membership.jsx";
-import Contact from "./components/Contact/Contact.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 
 const router = createBrowserRouter(
@@ -24,7 +23,6 @@ const router = createBrowserRouter(
       <Route path="team" element={<Team />} />
       <Route path="classes" element={<Classes />} />
       <Route path="membership" element={<Membership />} />
-      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );
