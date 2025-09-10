@@ -14,7 +14,7 @@ const Team = () => {
       <div className={styles.teamMember} id={styles.teamTwo}>
         <img
           className={styles.teamImg}
-          src="kickbox-man.svg"
+          src="dumbbell-man.svg"
           alt="woman doing a squat with a weighted bar"
         />
         <h2>Joe</h2>
@@ -32,7 +32,7 @@ const Team = () => {
       <div className={styles.teamMember} id={styles.teamFour}>
         <img
           className={styles.teamImg}
-          src="treadmill-man.svg"
+          src="plank-man.svg"
           alt="woman doing a squat with a weighted bar"
         />
         <h2>Zac</h2>
@@ -42,7 +42,7 @@ const Team = () => {
       <div className={styles.teamMember} id={styles.teamFive}>
         <img
           className={styles.teamImg}
-          src="yoga-woman.svg"
+          src="weight-squat-woman.svg"
           alt="woman doing a squat with a weighted bar"
         />
         <h2>Hillary</h2>
@@ -51,7 +51,7 @@ const Team = () => {
       <div className={styles.teamMember} id={styles.teamSix}>
         <img
           className={styles.teamImg}
-          src="weights-man.svg"
+          src="weight-bar-man.svg"
           alt="woman doing a squat with a weighted bar"
         />
         <h2>Pat</h2>

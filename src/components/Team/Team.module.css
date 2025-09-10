@@ -25,30 +25,31 @@
 }
 
 .teamImg {
-  height: 10rem;
-  width: 10rem;
-  object-fit: cover;
+  height: 9rem;
+  width: 13rem;
+  object-fit: contain;
   object-position: center;
   border-radius: 10px;
 }
-#teamOne > img {
-  object-position: right;
+.teamMember h2 {
+  font-size: var(--font-medium);
+  margin-top: 1em;
+  transition: color 0.4s ease;
 }
-#teamFive > img {
-  object-position: bottom;
+.teamMember h2:hover {
+  color: var(--primary-accent);
 }
-#teamSix > img {
-  object-position: right;
+.teamMember h3 {
+  font-size: var(--font-small);
+  margin: 1em 0em;
+  transition: color 0.4s ease;
 }
-
+.teamMember h3:hover {
+  color: var(--secondary-accent);
+}
 @media (min-width: 768px) {
   .teamContainer {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3em;
-  }
-  .teamImg {
-    height: 12em;
-    width: 12em;
-    object-fit: cover;
   }
 }
