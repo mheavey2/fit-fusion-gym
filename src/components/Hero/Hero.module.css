@@ -57,4 +57,20 @@
   background-color: var(--primary-dark-color);
   color: var(--secondary-accent);
   margin-top: 5em;
+  border-radius: 20px;
+  width: 12em;
+  padding: 0.7em 0em;
+  font-size: 1.3em;
+  font-weight: 700;
+  box-shadow: 4px 4px 8px var(--secondary-text);
+  letter-spacing: 0.1em;
+  font-family: inherit;
+  transition: transform 0.2s;
+  opacity: 1;
+  text-align: center;
+  text-shadow: 1px 1px 1px var(--secondary-text);
+}
+
+#introButton:hover {
+  transform: scale(1.1);
 }
