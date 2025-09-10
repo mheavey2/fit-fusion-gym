@@ -9,3 +9,7 @@
   opacity: 1;
   padding: 2em;
 }
+
+#navbarLinkHome {
+  color: var(--primary-accent);
+}
