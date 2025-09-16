@@ -1,0 +1,133 @@
+.classesContainer {
+  background-color: var(--secondary-dark-color);
+  color: var(--secondary-text);
+  margin-top: 2em;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+}
+.scheduleFilters {
+  background-color: var(--secondary-dark-color);
+  width: 100%;
+  border-radius: 20px;
+}
+
+.dayNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1em;
+  color: var(--secondary-accent);
+  margin: 2em 1em;
+
+  border-bottom: solid 1px var(--mid-tone-grey);
+}
+.dayNavigation > h2 {
+  margin-top: 0.8em;
+  letter-spacing: 0.1em;
+  font-size: var(--font-medium);
+}
+.navDayButton {
+  width: 3.5em;
+  font-size: 1em;
+  box-shadow: none;
+  color: var(--secondary-accent);
+  background-color: var(--primary-dark-color);
+  border: solid 2px var(--secondary-accent);
+  margin-bottom: 2em;
+}
+
+.classFilter {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: flex-end;
+  margin-right: 1em;
+  margin: 0em 1em;
+  position: relative;
+}
+.classTypeDropdown {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.2em;
+  margin-top: 1em;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: var(--font-small);
+  letter-spacing: 0.1em;
+  background-color: var(--mid-tone-grey);
+  color: var(--primary-accent);
+  border: solid 1px var(--mid-tone-grey);
+  position: relative;
+}
+
+.dayScheduleContainer {
+  display: grid;
+  width: 90%;
+  margin: 2em;
+}
+
+.dayColumn {
+  padding: 10px;
+}
+
+.dayHeader {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.classItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-dark-color);
+  color: var(--secondary-text);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--primary-text);
+  border-radius: 20px;
+  margin-bottom: 1em;
+  padding: 1em 0em;
+}
+.classType {
+  font-size: var(--font-med-small);
+  letter-spacing: 0.1em;
+  color: var(--primary-accent);
+  font-weight: 700;
+}
+.classTime {
+  letter-spacing: 0.1em;
+  font-size: var(--font-small);
+  margin-bottom: 1em;
+}
+
+.noClassMessage {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 20px;
+}
+
+.weekScheduleContainer {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dayScheduleContainer,
+  .dayNavigation {
+    display: none;
+  }
+  .weekScheduleContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 5em;
+  }
+  .classTypeDropdown {
+    width: 15em;
+  }
+}
