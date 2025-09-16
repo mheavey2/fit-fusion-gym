@@ -1,5 +1,5 @@
 import styles from "./Classes.module.css";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 
 const days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 
@@ -75,9 +75,35 @@ const Classes = () => {
   const currentDate = new Date();
   let currentDay = days[currentDate.getDay()];
   const [selectedDay, setSelectedDay] = useState(currentDay);
-
   const [selectedClassType, setSelectedClassType] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropDownRef = useRef(null);
 
+  // close dropdown when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropDownRef.current && !dropDownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  //toggle classes dropdown
+  const toggleDropDown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  //handle class type selection
+  const handleClassTypeSelect = (classType) => {
+    setSelectedClassType(classType);
+    setIsDropdownOpen(false);
+  };
+
+  //filter classes for the day view on mobile
   const filteredClassesBySelectedDay = useMemo(() => {
     return classTimes.filter(
       (classItem) =>
@@ -86,15 +112,24 @@ const Classes = () => {
     );
   }, [selectedDay, selectedClassType]);
 
+  // logic for navigating to next day on mobile view
   const handleNextDay = () => {
     const currentIndex = days.indexOf(selectedDay);
     const nextIndex = (currentIndex + 1) % days.length;
     setSelectedDay(days[nextIndex]);
   };
+
+  // logic for navigating to previous day on mobile view
   const handlePreviousDay = () => {
     const currentIndex = days.indexOf(selectedDay);
+    // add days.length to ensure that when its at index 0 (monday) it will still go back ((0-1+7)%7 = 6 i.e. sunday)
     const previousIndex = (currentIndex - 1 + days.length) % days.length;
     setSelectedDay(days[previousIndex]);
+  };
+
+  //determine the dropdown header text content
+  const getDropdownHeaderText = () => {
+    return selectedClassType || "All Classes";
   };
 
   return (
@@ -111,24 +146,39 @@ const Classes = () => {
           </button>
         </div>
         <div className={styles.classFilter}>
-          <select
-            value={selectedClassType || ""}
-            onChange={(e) => setSelectedClassType(e.target.value)}
-            className={styles.classTypeDropdown}
-          >
-            <option value="" className={styles.dropdownItem}>
-              All Classes
-            </option>
-            {classList.map((classType) => (
-              <option
-                key={classType}
-                value={classType}
-                className={styles.dropdownItem}
-              >
-                {classType}
-              </option>
-            ))}
-          </select>
+          <div ref={dropDownRef} className={styles.classTypeDropdown}>
+            <div className={styles.dropdownHeader} onClick={toggleDropDown}>
+              {getDropdownHeaderText()}
+              <span className={styles.dropdownArrow}>
+                {isDropdownOpen ? "▲" : "▼"}
+              </span>
+            </div>
+            {isDropdownOpen && (
+              <div className={styles.dropdownList}>
+                {selectedClassType !== null && (
+                  <div
+                    className={styles.dropdownItem}
+                    onClick={() => {
+                      handleClassTypeSelect(null);
+                    }}
+                  >
+                    All Classes
+                  </div>
+                )}
+                {classList.map((classType) => (
+                  <div
+                    className={styles.dropdownItem}
+                    key={classType}
+                    onClick={() => {
+                      handleClassTypeSelect(classType);
+                    }}
+                  >
+                    {classType}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {/* mobile view content */}
