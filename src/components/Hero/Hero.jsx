@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className={styles.heroOuter}>
+    <div className={styles.heroOuter} role="banner">
       <div className={styles.heroContent}>
         <h1>FitFusion Studios</h1>
         <h2>Find Your Fit</h2>

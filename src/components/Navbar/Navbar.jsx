@@ -4,8 +4,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className={styles.navbarContainer}>
-      <NavLink to="/" id={styles.navbarLinkHome}>
+    <div
+      className={styles.navbarContainer}
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <NavLink to="/" id={styles.navbarLinkHome} role="menuitem">
         FitFusion Studios
       </NavLink>
 

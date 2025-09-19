@@ -2,19 +2,27 @@ import styles from "./Contact.module.css";
 
 const Contact = () => {
   return (
-    <div className={styles.contactOuter}>
-      <div className={styles.infoContainer}>
+    <div className={styles.contactOuter} role="contactinfo">
+      <div className={styles.infoContainer} role="group" aria-label="location">
         <h3>Location</h3>
         <p>Unit 1</p>
         <p>Business Park</p>
         <p>Limerick</p>
       </div>
-      <div className={styles.phoneContainer}>
+      <div
+        className={styles.phoneContainer}
+        role="group"
+        aria-label="Contact Information"
+      >
         <h3>Phone</h3>
         <p>061-1234567</p>
       </div>
 
-      <div className={styles.hoursContainer}>
+      <div
+        className={styles.hoursContainer}
+        role="group"
+        aria-label="Business Hours"
+      >
         <h3>Opening Hours</h3>
         <p>Mon-Sat: 06:00-22:00</p>
 

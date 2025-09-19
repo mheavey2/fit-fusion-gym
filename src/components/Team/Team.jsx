@@ -1,62 +1,72 @@
 import styles from "./Team.module.css";
 const Team = () => {
-  return (
-    <div className={styles.teamContainer}>
-      <div className={styles.teamMember} id={styles.teamOne}>
-        <img
-          className={styles.teamImg}
-          src="weights-woman.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Ava</h2>
-        <h3>Co-Founder | Coach | PT</h3>
-      </div>
-      <div className={styles.teamMember} id={styles.teamTwo}>
-        <img
-          className={styles.teamImg}
-          src="dumbbell-man.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Joe</h2>
-        <h3>Co-Founder | Coach</h3>
-      </div>
-      <div className={styles.teamMember} id={styles.teamThree}>
-        <img
-          className={styles.teamImg}
-          src="yoga-ball-woman.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Ana</h2>
-        <h3>Head of Operations | Coach</h3>
-      </div>
-      <div className={styles.teamMember} id={styles.teamFour}>
-        <img
-          className={styles.teamImg}
-          src="plank-man.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Zac</h2>
-        <h3>Coach | PT </h3>
-      </div>
+  const teamMembers = [
+    {
+      id: "team1",
+      name: "Ava",
+      title: "Co-Founder | Coach | PT",
+      image: "weights-woman.svg",
+      alt: "woman doing a plank with dumbells",
+    },
+    {
+      id: "team2",
+      name: "Joe",
+      title: "Co-Founder | Coach",
+      image: "dumbbell-man.svg",
+      alt: "seated man with a dumbbell",
+    },
+    {
+      id: "team3",
+      name: "Ana",
+      title: "Head of Operations | Coach",
+      image: "yoga-ball-woman.svg",
+      alt: "woman seated on floor with elbow resting on exercise ball",
+    },
+    {
+      id: "team4",
+      name: "Zac",
+      title: "Coach | PT",
+      image: "plank-man.svg",
+      alt: "man doing a plank",
+    },
+    {
+      id: "team5",
+      name: "Hillary",
+      title: "Nutritionist | Coach",
+      image: "weight-squat-woman.svg",
+      alt: "woman doing a squat with a weighted bar",
+    },
+    {
+      id: "team6",
+      name: "Pat",
+      title: "Coach | PT",
+      image: "weight-bar-man.svg",
+      alt: "man standing with his hands on a racked weighted bar",
+    },
+  ];
 
-      <div className={styles.teamMember} id={styles.teamFive}>
-        <img
-          className={styles.teamImg}
-          src="weight-squat-woman.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Hillary</h2>
-        <h3>Nutritionist | Coach</h3>
-      </div>
-      <div className={styles.teamMember} id={styles.teamSix}>
-        <img
-          className={styles.teamImg}
-          src="weight-bar-man.svg"
-          alt="woman doing a squat with a weighted bar"
-        />
-        <h2>Pat</h2>
-        <h3> Coach | PT</h3>
-      </div>
+  return (
+    <div className={styles.teamContainer} role="region" aria-label="The Team">
+      {teamMembers.map((member) => (
+        <div
+          className={styles.teamMember}
+          key={member.id}
+          role="listitem"
+          aria-label={`Team Member ${member.name}`}
+        >
+          <img
+            src={member.image}
+            alt={member.alt}
+            className={styles.teamImg}
+            role="img"
+            aria-label={`${member.name} profile image`}
+          />
+          <h2>{member.name}</h2>
+          <h3 role="text" aria-label="Team member role">
+            {member.title}
+          </h3>
+        </div>
+      ))}
     </div>
   );
 };

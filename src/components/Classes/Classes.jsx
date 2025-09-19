@@ -133,20 +133,50 @@ const Classes = () => {
   };
 
   return (
-    <div className={styles.classesContainer}>
+    <div
+      className={styles.classesContainer}
+      role="region"
+      aria-label="Claa Schedule"
+    >
       {/* filters and navigation */}
-      <div className={styles.scheduleFilters}>
-        <div className={styles.dayNavigation}>
-          <button className={styles.navDayButton} onClick={handlePreviousDay}>
+      <div
+        className={styles.scheduleFilters}
+        role="toolbar"
+        aria-label="Schedule Filters"
+      >
+        <div
+          className={styles.dayNavigation}
+          role="group"
+          aria-label="Day Navigation"
+        >
+          <button
+            className={styles.navDayButton}
+            onClick={handlePreviousDay}
+            role="Previous Day"
+          >
             ←
           </button>
           <h2>{selectedDay}</h2>
-          <button className={styles.navDayButton} onClick={handleNextDay}>
+          <button
+            className={styles.navDayButton}
+            onClick={handleNextDay}
+            aria-label="Next Day"
+          >
             →
           </button>
         </div>
-        <div className={styles.classFilter}>
-          <div ref={dropDownRef} className={styles.classTypeDropdown}>
+        <div
+          className={styles.classFilter}
+          role="group"
+          aria-label="Class Type Filter"
+        >
+          <div
+            ref={dropDownRef}
+            className={styles.classTypeDropdown}
+            role="combobox"
+            aria-expanded={isDropdownOpen}
+            aria-haspopup="listbox"
+          >
             <div className={styles.dropdownHeader} onClick={toggleDropDown}>
               {getDropdownHeaderText()}
               <span className={styles.dropdownArrow}>
@@ -182,8 +212,12 @@ const Classes = () => {
         </div>
       </div>
       {/* mobile view content */}
-      <div className={styles.dayScheduleContainer}>
-        <div className={styles.dayColumn} key={selectedDay}>
+      <div
+        className={styles.dayScheduleContainer}
+        role="list"
+        aria-label={`Classes on ${selectedDay}`}
+      >
+        <div className={styles.dayColumn} key={selectedDay} role="listitem">
           {filteredClassesBySelectedDay.length > 0 ? (
             filteredClassesBySelectedDay.map((classItem) => (
               <div key={classItem.id} className={styles.classItem}>
@@ -203,9 +237,18 @@ const Classes = () => {
         </div>
       </div>
       {/* Desktop view content  */}
-      <div className={styles.weekScheduleContainer}>
+      <div
+        className={styles.weekScheduleContainer}
+        role="table"
+        aria-label="Weekly Class Schedule"
+      >
         {days.map((day) => (
-          <div className={styles.dayColumn} key={day}>
+          <div
+            className={styles.dayColumn}
+            key={day}
+            role="row"
+            aria-label={`${day} Schedule`}
+          >
             <h3 className={styles.dayHeader}>{day}</h3>
             {classTimes
               .filter(

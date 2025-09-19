@@ -23,19 +23,33 @@ const NavbarMenu = () => {
   }, []);
 
   return (
-    <div className={styles.navbarMenuOuter} ref={navMenuRef}>
-      <button id={styles.navMenuBtn} onClick={toggleMenuVisiblility}>
+    <div
+      className={styles.navbarMenuOuter}
+      ref={navMenuRef}
+      role="menu"
+      aria-expanded={!isHidden}
+    >
+      <button
+        id={styles.navMenuBtn}
+        onClick={toggleMenuVisiblility}
+        aria-controls="navbar-menu"
+        aria-expanded={!isHidden}
+        aria-label={isHidden ? "Open menu" : "Close menu"}
+      >
         <img
           src={isHidden ? "gold-menu.svg" : "gold-x.svg"}
           alt={isHidden ? "Open menu icon" : "close menu icon"}
         />
       </button>
       <div
+        id="navbar-menu"
         className={` ${isHidden ? `${styles.hidden}` : `${styles.navbarMenu}`}`}
+        role="menu"
       >
         <div className={styles.navbarMenuLinks}>
           <NavLink
             to="/"
+            role="menuitem"
             onClick={() => {
               setIsHidden(true);
             }}
@@ -44,6 +58,7 @@ const NavbarMenu = () => {
           </NavLink>
           <NavLink
             to="about"
+            role="menuitem"
             onClick={() => {
               setIsHidden(true);
             }}
@@ -52,6 +67,7 @@ const NavbarMenu = () => {
           </NavLink>
           <NavLink
             to="team"
+            role="menuitem"
             onClick={() => {
               setIsHidden(true);
             }}
@@ -60,6 +76,7 @@ const NavbarMenu = () => {
           </NavLink>
           <NavLink
             to="classes"
+            role="menuitem"
             onClick={() => {
               setIsHidden(true);
             }}
@@ -68,6 +85,7 @@ const NavbarMenu = () => {
           </NavLink>
           <NavLink
             to="membership"
+            role="menuitem"
             onClick={() => {
               setIsHidden(true);
             }}

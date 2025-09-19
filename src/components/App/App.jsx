@@ -6,9 +6,9 @@ import Contact from "../Contact/Contact";
 function App() {
   return (
     <div className={styles.appContainer}>
-      <Navbar />
+      <Navbar role="navigation" />
       <Outlet />
-      <Contact id="contact" />
+      <Contact id="contact" role="complementary" />
     </div>
   );
 }
