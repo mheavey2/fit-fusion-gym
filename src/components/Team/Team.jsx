@@ -53,6 +53,7 @@ const Team = () => {
           key={member.id}
           role="listitem"
           aria-label={`Team Member ${member.name}`}
+          data-testid="team-card"
         >
           <img
             src={member.image}
