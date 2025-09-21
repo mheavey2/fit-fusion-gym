@@ -3,12 +3,12 @@ import styles from "./Contact.module.css";
 const Contact = () => {
   return (
     <div
-      className={`${styles.contactOuter}, contactContainer`}
+      className={`${styles.contactOuter} contactContainer`}
       role="contactinfo"
       data-testid="contact-outer"
     >
       <div
-        className={`${styles.infoContainer}, infoContainer`}
+        className={`${styles.infoContainer} infoContainer`}
         role="group"
         aria-label="location"
         data-testid="info-container"
@@ -19,7 +19,7 @@ const Contact = () => {
         <p>Limerick</p>
       </div>
       <div
-        className={`${styles.phoneContainer}, phoneContainer`}
+        className={`${styles.phoneContainer} phoneContainer`}
         role="group"
         aria-label="Contact Information"
         data-testid="phone-container"
@@ -29,7 +29,7 @@ const Contact = () => {
       </div>
 
       <div
-        className={`${styles.hoursContainer}, hoursContainer`}
+        className={`${styles.hoursContainer} hoursContainer`}
         role="group"
         aria-label="Business Hours"
         data-testid="hours-container"
