@@ -136,7 +136,7 @@ const Classes = () => {
     <div
       className={styles.classesContainer}
       role="region"
-      aria-label="Claa Schedule"
+      aria-label="Class Schedule"
     >
       {/* filters and navigation */}
       <div
@@ -152,7 +152,8 @@ const Classes = () => {
           <button
             className={styles.navDayButton}
             onClick={handlePreviousDay}
-            role="Previous Day"
+            aria-label="Previous Day"
+            role="button"
           >
             ←
           </button>
@@ -160,6 +161,7 @@ const Classes = () => {
           <button
             className={styles.navDayButton}
             onClick={handleNextDay}
+            role="button"
             aria-label="Next Day"
           >
             →
@@ -171,13 +173,16 @@ const Classes = () => {
           aria-label="Class Type Filter"
         >
           <div
+            role="combobox"
             ref={dropDownRef}
             className={styles.classTypeDropdown}
-            role="combobox"
             aria-expanded={isDropdownOpen}
             aria-haspopup="listbox"
+            aria-controls="class-type-list"
+            data-testid="class-dropdown"
+            onClick={toggleDropDown}
           >
-            <div className={styles.dropdownHeader} onClick={toggleDropDown}>
+            <div className={styles.dropdownHeader} id="class-type-list">
               {getDropdownHeaderText()}
               <span className={styles.dropdownArrow}>
                 {isDropdownOpen ? "▲" : "▼"}
@@ -187,6 +192,7 @@ const Classes = () => {
               <div className={styles.dropdownList}>
                 {selectedClassType !== null && (
                   <div
+                    data-testid="class-dropdown-item-all"
                     className={styles.dropdownItem}
                     onClick={() => {
                       handleClassTypeSelect(null);
@@ -202,6 +208,7 @@ const Classes = () => {
                     onClick={() => {
                       handleClassTypeSelect(classType);
                     }}
+                    data-testid="class-dropdown-item"
                   >
                     {classType}
                   </div>
