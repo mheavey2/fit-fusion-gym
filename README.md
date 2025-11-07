@@ -2,12 +2,23 @@
 
 ## Description
 
+![Home](public/fitFusion-Home.png)
+
 A website for gym business showcasing its services, the gym team members, its membership packages and class schedules.
+
+![About](public/fitFusion-About.png)
+
+![The Team](public/fitFusion-Team.png)
+
+![Membership](public/fitFusion-Membership.png)
+
+![Classses](public/fitFusion-classes.png)
 
 ## Features
 
-- responsive design
-- aesthetic UI
+- Responsive Design
+- Aesthetic UI
+- Page Routing
 
 ## Technologies Used
 
@@ -27,6 +38,7 @@ A website for gym business showcasing its services, the gym team members, its me
 
 3. npm run dev
 
-## Usage
-
 ## Future Improvements
+
+- implement a class booking system
+- add a members only area with secure login and user profiles
